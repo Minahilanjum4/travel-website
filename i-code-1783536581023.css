@@ -1,0 +1,307 @@
+/* Core Global Resets & Layout Tokens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #DF6951;
+    --secondary-color: #F1A501;
+    --dark-text: #1E1D4C;
+    --light-text: #5E6282;
+    --bg-white: #FFFFFF;
+    --font-heading: 'Volkhov', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-text);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+    padding: 0 8%;
+}
+
+/* Header Component */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--dark-text);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.signup-btn {
+    border: 1px solid var(--dark-text);
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Hero Component Layout */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    min-height: calc(100vh - 100px);
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.tagline {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 64px;
+    line-height: 1.15;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    color: var(--light-text);
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 15px 30px rgba(241, 165, 1, 0.15);
+}
+
+.btn-play {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-play span {
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-placeholder-img {
+    width: 100%;
+    max-width: 500px;
+    height: 450px;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+}
+
+/* Sections Layout Structure */
+.section-tag {
+    text-align: center;
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 44px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+/* Services Grid Component */
+.services-section, .destinations-section {
+    padding: 80px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--bg-white);
+    padding: 40px 25px;
+    border-radius: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card.active, .service-card:hover {
+    box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--light-text);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Destinations Component */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
+.dest-img-placeholder {
+    height: 300px;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+}
+
+.dest-info {
+    padding: 25px;
+}
+
+.dest-meta {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.dest-meta span:first-child {
+    color: var(--dark-text);
+}
+
+.dest-duration {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+/* Responsive Infrastructure (Media Queries) */
+@media (max-width: 1024px) {
+    body { padding: 0 5%; }
+    .hero h1 { font-size: 48px; }
+    .hero-placeholder-img { height: 350px; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        padding: 30px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        z-hidden: 100;
+        gap: 20px;
+    }
+    
+    .nav-links.active { display: flex; }
+    .hero { flex-direction: column-reverse; text-align: center; padding: 40px 0; }
+    .hero-cta { justify-content: center; }
+    .hero h1 { font-size: 36px; }
+}
